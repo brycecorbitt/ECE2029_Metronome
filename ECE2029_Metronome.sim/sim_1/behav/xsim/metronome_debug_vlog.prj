@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../ECE2029_Metronome.srcs/sources_1/new/button.v" \
+"../../../../ECE2029_Metronome.srcs/sources_1/new/counter_3bit.v" \
+"../../../../ECE2029_Metronome.srcs/sources_1/new/tempo_selector.v" \
+"../../../../ECE2029_Metronome.srcs/sources_1/new/time_signature_clock.v" \
+"../../../../ECE2029_Metronome.srcs/sources_1/new/metronome_debug.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
