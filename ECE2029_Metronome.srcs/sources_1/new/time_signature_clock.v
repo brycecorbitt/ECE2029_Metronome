@@ -36,7 +36,7 @@ module time_signature_clock(
 
 
     always@ (posedge clk)
-        if (period_count < beat_cycles)
+        if ((period_count < beat_cycles && NOTE_BEAT == 4) || (period_count < beat_cycles >> 1 && NOTE_BEAT == 8))
         begin
             period_count <= period_count + 1;
             if((tick[0] | tick[1]) & period_count == PULSE_LENGTH -1)

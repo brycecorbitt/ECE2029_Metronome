@@ -32,7 +32,9 @@ set_property ip_output_repo /home/brycetherower/Documents/vivado/ECE2029_Metrono
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/button.v
+  /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/counter_2bit.v
   /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/counter_3bit.v
+  /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/mux_4x1_2bit.v
   /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/tempo_selector.v
   /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/time_signature_clock.v
   /home/brycetherower/Documents/vivado/ECE2029_Metronome/ECE2029_Metronome.srcs/sources_1/new/metronome.v
