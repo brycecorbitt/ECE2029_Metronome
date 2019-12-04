@@ -22,17 +22,21 @@
 
 module metronome(
     input btnL, btnR, clk,
-    output [1:0] JA 
+    output [1:0] JA,
+    output [15:14] LED
     );
     wire brL, brR;
     wire [2:0]tempo_val;
     wire [31:0] beat_cycles;
+    wire [1:0] pulses;
     
     button bL(clk, btnL, brL);
     button bR(clk, btnR, brR);
     counter_3bit c0(clk, 0, brR, brL, tempo_val);
     tempo_selector t0(tempo_val, beat_cycles);
-    time_signature_clock tl(clk, beat_cycles, JA);
+    time_signature_clock tl(clk, beat_cycles, pulses);
+    assign JA = pulses;
+    assign LED = pulses;
     
     
 endmodule
