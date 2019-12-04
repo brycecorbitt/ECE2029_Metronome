@@ -24,16 +24,22 @@ module metronome_debug(
     );
     reg btnL, btnR;
     reg clk = 0;
-    wire brL, brR;
+    reg brL, brR;
     wire [2:0]tempo_val;
     wire [31:0] beat_cycles;
     wire [1:0] led;
     always #10 clk = ~clk;
-    button bL(clk, btnL, brL);
-    button bR(clk, btnR, brR);
+//    button bL(clk, btnL, brL);
+//    button bR(clk, btnR, brR);
     counter_3bit c0(clk, 0, brR, brL, tempo_val);
     tempo_selector t0(tempo_val, beat_cycles);
     time_signature_clock tl(clk, beat_cycles, led);
+    initial begin
+    #100
+    brR = 1;
+    #1000000000
+    brR = 0;
+    end
 
 
 endmodule

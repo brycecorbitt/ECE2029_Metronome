@@ -32,9 +32,11 @@ module time_signature_clock(
     reg [31:0] period_count = 0;
     reg [7:0] beat_count = 0;
     reg [1:0] tick = 2'b10;
-    
+
+
+
     always@ (posedge clk)
-        if (period_count != beat_cycles -1)
+        if (period_count < beat_cycles)
         begin
             period_count <= period_count + 1;
             if((tick[0] | tick[1]) & period_count == PULSE_LENGTH -1)
@@ -51,7 +53,7 @@ module time_signature_clock(
                     tick <= 2'b10;
             else
                 tick <= 2'b01;
-         end
+        end
      
      assign pulse = tick;
 endmodule
