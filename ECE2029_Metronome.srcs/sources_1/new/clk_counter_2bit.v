@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 12/02/2019 07:40:08 PM
+// Create Date: 12/04/2019 08:31:59 AM
 // Design Name: 
-// Module Name: 4bit_counter
+// Module Name: counter_2bit
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module counter_4bit(
-
-    );
+module clk_counter_2bit(input clk,
+    output [1:0] Q); //clk is input, two outputs Q[1]--MSB, Q[0]--LSB.
+    reg [1:0] temp = 0;
+    always @(posedge clk) begin
+        temp = temp + 1;
+    end
+    assign Q = temp;
 endmodule

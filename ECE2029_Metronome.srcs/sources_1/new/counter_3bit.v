@@ -44,9 +44,9 @@
 
 module counter_3bit(
     input clk, reset, increment, decrement,
-    output [3:0] count 
+    output [2:0] count 
 );
-    reg[3:0] current_count = 0;
+    reg[2:0] current_count = 0;
     reg prev_inc = 0;
     reg prev_dec = 0;
     
